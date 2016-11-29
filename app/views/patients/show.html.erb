@@ -1,0 +1,25 @@
+<% if notice.present? %>
+<%= notice %>
+<%end%>
+
+
+	<table class="table table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido Paterno</th>
+				<th>Apellido Materno</th>
+				<th>Dirección</th>
+				<th>Número Celular</th>	
+			</tr>
+		</thead>	
+			<tbody>
+				<tr>
+					<td> <%="#{@pacientes.nombre} "%> </td>
+					<td> <%="#{@pacientes.appaterno} "%> </td>
+					<td> <%="#{@pacientes.apmaterno} "%> </td>
+					<td> <%="#{@pacientes.direccion} "%> </td>
+					<td> <%="#{@pacientes.numerotel} "%> </td>
+				</tr>
+			</tbody>
+	</table>

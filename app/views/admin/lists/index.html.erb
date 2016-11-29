@@ -1,0 +1,39 @@
+<!--Se agregó para salir de la sesión-->
+
+<div class="container">
+<h1>Lista Médica</h1>
+<%= link_to"Nuevo cita", new_admin_list_path, :class => 'btn btn-mini btn-success' %>
+
+<% if @listas.blank?	%>
+	<p style="color:#ff0000">No hay elementos en la base de Datos</p>
+<% else %>
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Doctor</th>
+			<th>Usuario</td>
+			<th>Paciente</th>
+			<th>Fecha</th>
+			<th>Hora</th>
+			<th>Atendido</th>
+			<th>Opciones</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<%@listas.each do |l| %>
+			<tr> 
+				<td><%= "#{l.encargado}"%></td>
+				<td> <%= "#{l.user.nombre}"%> </td>
+				<td> <%= "#{l.patient.nombre}"%></td>
+				<td> <%="#{l.fecha}"%></td>
+				<td> <%="#{l.hora}"%></td>
+				<td> <%="#{l.atendido}"%></td>
+
+				<td> <%=link_to 'Mostrar' , admin_list_path(l), :class => 'btn btn-mini btn-info'  %> <%=link_to "Editar", edit_admin_list_path(l), :class => 'btn btn-mini btn-warning' %> <%=link_to "Eliminar",admin_list_path(l),method: :delete, data:{confirm:"Eliminar elemento?"}, :class => 'btn btn-mini btn-danger' %> </td>
+			</tr>
+			<%end%>
+	</tbody>
+</table>
+<%end%>
+</div>

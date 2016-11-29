@@ -1,0 +1,37 @@
+<!--Se agregó para salir de la sesión-->
+
+<div class="container">
+<h1>Pacientes</h1>
+<%= link_to"Nuevo paciente", new_patient_path, :class => 'btn btn-mini btn-success' %>
+
+<% if @pacientes.blank?	%>
+	<p style="color:#ff0000">No hay elementos en la base de Datos</p>
+<% else %>
+<table class="table table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Apellido Paterno</td>
+			<th>Apellido Materno</th>
+			<th>Dirección</th>
+			<th>Numero Celular</th>
+			<th>Opciones</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<%@pacientes.each do |pa| %>
+			<tr> 
+				<td><%= "#{pa.nombre}"%></td>
+				<td> <%="#{pa.appaterno}"%></td>
+				<td> <%="#{pa.apmaterno}"%></td>
+				<td> <%="#{pa.direccion}"%></td>
+				<td> <%="#{pa.numerotel}"%></td>
+
+				<td> <%=link_to 'Mostrar' , patient_path(pa), :class => 'btn btn-mini btn-info'  %> <%=link_to "Editar", edit_patient_path(pa), :class => 'btn btn-mini btn-warning' %> <%=link_to "Eliminar",patient_path(pa),method: :delete, data:{confirm:"Eliminar elemento?"}, :class => 'btn btn-mini btn-danger' %> </td>
+			</tr>
+			<%end%>
+	</tbody>
+</table>
+<%end%>
+</div>

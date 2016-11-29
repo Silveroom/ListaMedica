@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  encargado: MyString
+  paciente: MyString
+  fecha: MyString
+  hora: MyString
+  atendido: MyString
+
+two:
+  encargado: MyString
+  paciente: MyString
+  fecha: MyString
+  hora: MyString
+  atendido: MyString

@@ -1,0 +1,12 @@
+<% if object.errors.any? %>
+  <div class="alert alert-dismissible alert-danger">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <b>Alerta !! </b><%= object.errors.count > 1 ? "Se han encontrado #{object.errors.count} errores:": "Se ha encontrado #{object.errors.count} error:" %>
+
+    <ul>
+      <% object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

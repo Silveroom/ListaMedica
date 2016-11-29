@@ -1,0 +1,27 @@
+<% if notice.present? %>
+<%= notice %>
+<%end%>
+
+
+	<table class="table table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Doctor</th>
+				<th>Usuario</th>
+				<th>Paciente</th>
+				<th>Fecha</th>
+				<th>Hora</th>
+				<th>Atendido</th>	
+			</tr>
+		</thead>	
+			<tbody>
+				<tr>
+					<td> <%="#{@listas.encargado} "%> </td>
+					<td> <%="#{@listas.user.nombre} "%> </td>
+					<td> <%="#{@listas.patient.nombre} "%> </td>
+					<td> <%="#{@listas.fecha} "%> </td>
+					<td> <%="#{@listas.hora} "%> </td>
+					<td> <%="#{@listas.atendido} "%> </td>
+				</tr>
+			</tbody>
+	</table>
