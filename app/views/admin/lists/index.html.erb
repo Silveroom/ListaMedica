@@ -24,8 +24,8 @@
 		<%@listas.each do |l| %>
 			<tr> 
 				<td><%= "#{l.encargado}"%></td>
-				<td> <%= "#{l.user.nombre}"%> </td>
-				<td> <%= "#{l.patient.nombre}"%></td>
+				<td> <%= "#{l.user.nombre} #{l.user.apellido_paterno}"%> </td>
+				<td> <%= "#{l.patient.nombre} #{l.patient.appaterno}"%></td>
 				<td> <%="#{l.fecha}"%></td>
 				<td> <%="#{l.hora}"%></td>
 				<td> <%="#{l.atendido}"%></td>
